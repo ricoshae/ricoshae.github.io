@@ -1,0 +1,30 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 669 339.5">
+  <circle cx="482" cy="184.5" r="150" fill="#079942"/>
+  <script type="text/javascript"><![CDATA[
+   window.addEventListener('load',function(){
+    var KEY = { w:87, a:65, s:83, d:68 };
+    var moveSpeed = 5;
+    var circle = document.getElementsByTagName("circle")[0];
+    var x = circle.getAttribute('cx')*1,
+        y = circle.getAttribute('cy')*1;
+    document.documentElement.addEventListener('keydown',function(evt){
+      switch (evt.keyCode){
+        case KEY.w:
+          circle.setAttribute('cy',y-=moveSpeed);
+          // Alternatively:
+          // circle.cy.baseVal.value = (y-=moveSpeed);
+        break;
+        case KEY.s:
+          circle.setAttribute('cy',y+=moveSpeed);
+        break;
+        case KEY.a:
+          circle.setAttribute('cx',x-=moveSpeed);
+        break;
+        case KEY.d:
+          circle.setAttribute('cx',x+=moveSpeed);
+        break;
+      }
+    },false);
+    });
+  ]]></script>
+</svg>
